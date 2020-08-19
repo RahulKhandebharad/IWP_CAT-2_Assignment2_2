@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic JavaScript Web Form Validation</title>
+<script>
+function validateForm() {
+  var x = document.forms["myForm"]["fname"].value;
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+}
+    
+function myFunction() {
+  var x, text;
+
+  // Get the value of the input field with id="numb"
+  x = document.getElementById("numb").value;
+
+  // If x is Not a Number or less than one or greater than 10
+  if (isNaN(x) || x < 1 || x > 1000) {
+    text = "Input not valid";
+  } else {
+    text = "Input OK";
+  }
+  document.getElementById("demo").innerHTML = text;
+}
+</script>
+</head>
+<body>
+<h2>Basic JavaScript Web Form Validation</h2>
+<p> Try clicking on submit without entering any name.</p>
+<form name="myForm" onsubmit="return validateForm()" method="post">
+  Name: <br><input type="text" name="fname">
+  <input type="submit" value="Submit">
+</form>
+    
+ <br>
+ <br>
+    
+ <p>Try entering any non integer value and click submit.</p>    
+<p>Please input a number between 1 and 1000:</p>
+<input id="numb">
+<button type="button" onclick="myFunction()">Submit</button>
+<p id="demo"></p>
+
+</body>
+</html>
